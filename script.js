@@ -1,7 +1,7 @@
 window.addEventListener('load', function(){
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
-canvas.width = 1768;
+canvas.width = 1000;
 canvas.height = 500;
 
 class InputHandler {
@@ -389,7 +389,7 @@ class Game {
           this.ammoInterval = 250;
           this.gameOver = false;
           this.score = 0;
-          this.winningScore = 10;
+          this.winningScore = 1000;
           this.gameTime = 0;
           this.timeLimit = 100000;
           this.speed = 1;
@@ -436,7 +436,7 @@ class Game {
                      enemy.markedForDeletion = true;
                      this.addExplosion(enemy)
                      if (!this.gameOver) this.score += enemy.score;
-                     /* if (this.score > this.winningScore) this.gameOver = true; */
+                     if (this.score > this.winningScore) this.gameOver = true;
                   }
                }
             })
